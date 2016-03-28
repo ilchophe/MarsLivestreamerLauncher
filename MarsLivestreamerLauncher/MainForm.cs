@@ -30,16 +30,24 @@ namespace MarsLivestreamerLauncher
 
         private void Launchbutton_Click(object sender, EventArgs e)
         {
-            LaunchTwitchStreamer(textBox1.Text,comboBox1.SelectedText);
+            LaunchTwitchStreamer(textBox1.Text,comboBox1.Text);
         }
 
         private void LaunchTwitchStreamer(string url, string quality)
         {
-            ProcessStartInfo p = new ProcessStartInfo("livestreamer.exe");
-            p.Arguments = url + @" " + quality;
-            p.UseShellExecute = true;
-           // Process.Start("livestreamer.exe", ,);
-             Process.Start(p);
+  
+               Process proc = new Process {
+                StartInfo = new ProcessStartInfo {
+                    FileName = "livestreamer.exe",
+                    Arguments = url + @" " + quality,
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    CreateNoWindow = true
+                }
+            };
+
+               proc.Start();
+                       
         }
     }
 }

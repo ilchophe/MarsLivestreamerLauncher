@@ -76,11 +76,11 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Source (Best)",
-            "High",
-            "Medium",
-            "Low",
-            "Mobile (Worst)"});
+            "source",
+            "high",
+            "medium",
+            "low",
+            "mobile"});
             this.comboBox1.Location = new System.Drawing.Point(148, 67);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(326, 21);
